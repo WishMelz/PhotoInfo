@@ -128,7 +128,7 @@ export default {
           _this.imgData.location.y = lat;
           _this.imgData.location.x = lon;
           // console.log(_this.imgData);
-          const mapKey = "xxxxx";
+          const mapKey = "xxxx";
           _this.$http
             .get(
               `https://restapi.amap.com/v3/geocode/regeo?key=${mapKey}&location=${lon},${lat}`
@@ -143,7 +143,21 @@ export default {
                 _this.imgData.location.name = "获取位置信息失败!";
               }
             });
-
+          // _this.$http
+          //   .post("https://ppgjx.com/functions/ImageLocation/get", {
+          //     location: `${lon},${lat}`,
+          //   })
+          //   .then((res) => {
+          //     // console.log(res);
+          //     _this.show = true;
+          //     Toast.clear();
+          //     if (res.data.code == 0) {
+          //       _this.imgData.location.name =
+          //         res.data.data.regeocode.formatted_address;
+          //     } else {
+          //       _this.imgData.location.name = "获取位置信息失败!";
+          //     }
+          //   });
         } else {
           Toast.clear();
           _this.show = true;
